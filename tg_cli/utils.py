@@ -11,7 +11,7 @@ def get_credentials(path: Path):
 
 
 def create_csv_channel_messages_file(path: Path):
-    with open(path, 'w', newline='') as csvfile:
+    with open(path, 'w', newline='', encoding="utf-8") as csvfile:
         writer = get_csv_writer(csvfile)
         field_names = get_csv_file_first_row()
         writer.writerow(field_names)
@@ -62,7 +62,7 @@ def extract_written_messages_from_csv_file(path: Path):
 
 
 def write_messages_to_empty_csv_file(path: Path, messages: List[IMessage]):
-    with open(path, 'w', newline='') as csvfile:
+    with open(path, 'w', newline='', encoding="utf-8") as csvfile:
         writer = get_csv_writer(csvfile)
         field_names = get_csv_file_first_row()
         writer.writerow(field_names)
